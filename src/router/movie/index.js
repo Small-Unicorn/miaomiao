@@ -3,10 +3,10 @@ export default {
   name:'movie',
   component:() => import ('@/views/Movie'),
   children:[
-    {
-      path:'city',
-      component:() => import ('@/components/City')
-    },
+    // {
+    //   path:'city',
+    //   component:() => import ('@/components/City')
+    // },
     {
       path:'nowPlaying',
       component:() => import ('@/components/NowPlaying')
