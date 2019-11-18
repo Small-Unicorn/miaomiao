@@ -3,17 +3,19 @@
     <Header title="影院" />
     <div id="content">
       <div class="cinema_menu">
-        <div class="city_switch">
+        <router-link tag="div" to="/cinema/cinemaList" class="city_switch active">
           全城 <i class="iconfont icon-lower-triangle"></i>
-        </div>
-        <div class="brand_swtich">
+        </router-link>
+        <router-link tag="div" to="/cinema/brand" class="brand_swtich active">
           品牌 <i class="iconfont icon-lower-triangle"></i>
-        </div>
-        <div class="feature_switch">
+        </router-link>
+        <router-link tag="div" to="/cinema/feature" class="feature_switch active">
           特色 <i class="iconfont icon-lower-triangle"></i>
-        </div>
+        </router-link>
       </div>
-      <CinemaList />
+      <keep-alive>
+        <router-view />
+      </keep-alive>
     </div>
     <TabBar />
   </div>
@@ -22,12 +24,12 @@
 <script>
 import Header from '@/components/Header';
 import TabBar from '@/components/TabBar';
-import CinemaList from '@/components/CinemaList';
+// import CinemaList from '@/components/CinemaList';
 export default {
     name:'Cinema',
     components:{
      Header,
-     CinemaList,
+    //  CinemaList,
      TabBar
    }
 }
@@ -35,4 +37,10 @@ export default {
 
 <style scoped>
 #content .cinema_menu{ width: 100%; height: 45px; border-bottom:1px solid #e6e6e6; display: flex; justify-content:space-around; align-items:center; background:white;}
+ .cinema_menu .city_switch.active{color: #ef4238; border-bottom: 2px #ef4238 solid;}
+ .cinema_menu .city_switch.router-link-active{color: #ef4238; border-bottom: 2px #ef4238 solid;}
+ .cinema_menu .brand_swtich.active{color: #ef4238; border-bottom: 2px #ef4238 solid;}
+ .cinema_menu .brand_swtich.router-link-active{color: #ef4238; border-bottom: 2px #ef4238 solid;}
+ .cinema_menu .feature_switch.active{color: #ef4238; border-bottom: 2px #ef4238 solid;}
+ .cinema_menu .feature_switch.router-link-active{color: #ef4238; border-bottom: 2px #ef4238 solid;}
 </style>

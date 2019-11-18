@@ -6,6 +6,11 @@ import store from './store'
 import axios from 'axios'
 Vue.prototype.axios=axios;
 
+import Scroller from '@/components/Scroller'
+Vue.component('Scroller' , Scroller);
+import Loading from '@/components/Loading'
+Vue.component('Loading' , Loading);
+
 Vue.filter('setWH',(url,arg)=>{
   // /转译 .通配意思 要转译
   return url.replace(/w\.h/,arg);

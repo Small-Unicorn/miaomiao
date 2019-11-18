@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'CinemaList',
+  name: 'Feature',
   data(){
     return {
       cinemaList:[],

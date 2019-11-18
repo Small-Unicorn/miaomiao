@@ -36,9 +36,10 @@ export default {
     // 监听搜索框
     //搜索框要加入防抖
     message(newVal){
+      var cityId=this.$store.state.city.id;
       //axios自带的防抖方法调用
       this.cancelRequest();
-      this.axios.get(`/api/searchList?cityId=10&kw=${newVal}`,{
+      this.axios.get(`/api/searchList?cityId=${cityId}&kw=${newVal}`,{
         cancelToken: new this.axios.CancelToken((c)=>{
         this.source = c;
         })
